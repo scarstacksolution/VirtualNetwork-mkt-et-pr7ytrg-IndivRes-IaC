@@ -22,7 +22,7 @@
           template: ./application-insights-mkt-east.json
           parameters: workspaceResourceId=9410b8c3-1d9c-4c48-b3d5-9dc61afd4a68
                       requestSource=IbizaAIExtension
-                      tagsArray=[{"Department":"Marketing","Environment":"Prod","Cost-Center":"CSTPR-MK543","Project":"EcoEnergyCampaign","Team":"IndivResAppDev"}]
+                      tagsArray=["Department":"Marketing","Environment":"Prod","Cost-Center":"CSTPR-MK543","Project":"EcoEnergyCampaign","Team":"IndivResAppDev"]
                       workspaceResourceId=/subscriptions/d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66/resourcegroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66-EUS
 
         # output containerName variable from template
