@@ -8,9 +8,11 @@ This Repo Deploys an Application Insights Azure cloud Resource to Azure Cloud us
 
 ****** Reference Used    ******
 
-Deploy ARM Template using GitHub
-https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-github-actions?tabs=userlevel
+Deploy ARM Template using GitHub ====>>>>>
+1. https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-github-actions?tabs=userlevel
+2. https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template
 
+# STEPS TO CREATE SERVICE PRINCIPAL FOR YOUR SPECIFIC GITHUB Repo
 Create a Service Principal for GitHub
 	1.	az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<group-name> --json-auth
 	2.	Copy the output and paste in the main GitHub repository to be used as a value under Settings -> Security -> Actions -> New repository secret with name field as AZURE_CREDENTIALS
