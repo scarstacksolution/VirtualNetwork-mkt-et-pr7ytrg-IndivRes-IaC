@@ -18,7 +18,7 @@
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ secrets.AZURE_RG }}
+          resourceGroupName: rsgrp-mkt-east-pr7ytrg
           template: ./application-insights-mkt-east.json
           parameters: storageAccountType=Standard_LRS
 
