@@ -12,7 +12,7 @@
             "type": "String"
         },
         "tagsArray": {
-            "type": "Object"
+            "type": "string"
         },
         "requestSource": {
             "type": "String"
