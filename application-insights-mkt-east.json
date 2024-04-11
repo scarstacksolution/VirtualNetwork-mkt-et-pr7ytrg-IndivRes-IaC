@@ -25,17 +25,17 @@
         {
             "type": "microsoft.insights/components",
             "apiVersion": "2020-02-02-preview",
-            "name": "appInsight-jsonDeploy",
-            "location": "[parameters('regionId')]",
+            "name": "appInsightjsonDeploy",
+            "location": "East US",
             "dependsOn": [
                 "newWorkspaceTemplate"
             ],
-            "tags": "[parameters('tagsArray')]",
+            "tags": {"Department":"Marketing","Environment":"Prod","Cost-Center":"CSTPR-MK543","Project":"EcoEnergyCampaign","Team":"IndivResAppDev"},
             "properties": {
                 "ApplicationId": "appInsight-jsonDeploy",
-                "Application_Type": "[parameters('type')]",
+                "Application_Type": "web",
                 "Flow_Type": "Redfield",
-                "Request_Source": "[parameters('requestSource')]",
+                "Request_Source": "IbizaAIExtension",
                 "WorkspaceResourceId": "[parameters('workspaceResourceId')]"
             }
         },
@@ -62,7 +62,7 @@
                 }
             },
             "subscriptionId": "d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66",
-            "resourceGroup": "DefaultResourceGroup-EUS"
+            "resourceGroup": "rsgrp-mkt-east-pr7ytrg"
         }
     ]
 }
