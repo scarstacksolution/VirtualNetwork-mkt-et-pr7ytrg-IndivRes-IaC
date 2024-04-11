@@ -30,7 +30,7 @@
             "dependsOn": [
                 "newWorkspaceTemplate"
             ],
-            "tags": "[parameters('tagsArray')]",
+            "tags": {"Department":"Marketing","Environment":"Prod","Cost-Center":"CSTPR-MK543","Project":"EcoEnergyCampaign","Team":"IndivResAppDev"},
             "properties": {
                 "ApplicationId": "appInsight-jsonDeploy",
                 "Application_Type": "web",
