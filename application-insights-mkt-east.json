@@ -1,0 +1,68 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "String"
+        },
+        "type": {
+            "type": "String"
+        },
+        "regionId": {
+            "type": "String"
+        },
+        "tagsArray": {
+            "type": "Object"
+        },
+        "requestSource": {
+            "type": "String"
+        },
+        "workspaceResourceId": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "microsoft.insights/components",
+            "apiVersion": "2020-02-02-preview",
+            "name": "appInsight-jsonDeploy",
+            "location": "[parameters('regionId')]",
+            "dependsOn": [
+                "newWorkspaceTemplate"
+            ],
+            "tags": "[parameters('tagsArray')]",
+            "properties": {
+                "ApplicationId": "appInsight-jsonDeploy",
+                "Application_Type": "[parameters('type')]",
+                "Flow_Type": "Redfield",
+                "Request_Source": "[parameters('requestSource')]",
+                "WorkspaceResourceId": "[parameters('workspaceResourceId')]"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "newWorkspaceTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "apiVersion": "2020-08-01",
+                            "name": "DefaultWorkspace-d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66-EUS",
+                            "type": "Microsoft.OperationalInsights/workspaces",
+                            "location": "eastus",
+                            "properties": {}
+                        }
+                    ]
+                }
+            },
+            "subscriptionId": "d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66",
+            "resourceGroup": "DefaultResourceGroup-EUS"
+        }
+    ]
+}
