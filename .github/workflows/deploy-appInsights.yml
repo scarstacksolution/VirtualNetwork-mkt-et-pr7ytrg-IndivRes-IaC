@@ -21,6 +21,7 @@
           resourceGroupName: rsgrp-mkt-east-pr7ytrg
           template: ./application-insights-mkt-east.json
           parameters: workspaceResourceId=9410b8c3-1d9c-4c48-b3d5-9dc61afd4a68
+                      Request Source=IbizaAIExtension
 
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
