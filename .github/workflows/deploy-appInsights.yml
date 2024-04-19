@@ -27,6 +27,9 @@
                       name=appInsightjsonARMDeploy
                       tagsArray='[{"Department":"Marketing","Environment":"Prod","Cost-Center":"CSTPR-MK543","Project":"EcoEnergyCampaign","Team":"IndivResAppDev"}]'
                       workspaceResourceId=/subscriptions/d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66/resourcegroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66-EUS
-
+        
+      - name: Datadog Service Catalog Metadata Provider
+        uses: arcxp/datadog-service-catalog-metadata-provider@v2.3.1
+            
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
