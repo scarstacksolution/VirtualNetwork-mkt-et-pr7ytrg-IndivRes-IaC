@@ -14,7 +14,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: '<your-resource-manager-connection>'
+    azureResourceManagerConnection: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)' #'<your-resource-manager-connection>'
     subscriptionId: 'd8063b4c-5a26-4bb2-a00b-b40ab0c2ba66' #'<your-subscription-id>'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'ARMPipelinesLAMP-rg'
