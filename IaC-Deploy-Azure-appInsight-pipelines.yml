@@ -7,7 +7,7 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'Microsoft.OperationalInsights/workspaces'
+    #SourceFolder: 'Microsoft.OperationalInsights/workspaces'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
