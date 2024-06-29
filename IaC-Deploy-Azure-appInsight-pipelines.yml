@@ -1,26 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
-- main #none
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 steps:
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: 'microsoft.insights/components' #'Microsoft.OperationalInsights/workspaces'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)' #'<your-resource-manager-connection>'
-    subscriptionId: 'd8063b4c-5a26-4bb2-a00b-b40ab0c2ba66' #'<your-subscription-id>'
+    azureResourceManagerConnection: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)'
+    subscriptionId: 'd8063b4c-5a26-4bb2-a00b-b40ab0c2ba66'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'ARMPipelinesLAMP-rg'
-    location: 'eastus'
+    resourceGroupName: 'rg-IaC-ARMPipelinesAzure'
+    location: 'East US'
     templateLocation: 'Linked artifact'
-    csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
-    csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
-    #overrideParameters: '-siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
     deploymentMode: 'Incremental'
